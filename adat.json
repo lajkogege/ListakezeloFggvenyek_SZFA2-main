@@ -1,0 +1,28 @@
+{"emberekLISTA":[
+    {
+        "nev":"Éva",
+        "kor":12,
+        "nem":true
+    },
+    {
+        "nev":"Zita",
+        "kor":22,
+        "nem":true
+    },
+    {
+        "nev":"Ákos",
+        "kor":12,
+        "nem":false
+    },
+    {
+        "nev":"Attila",
+        "kor":55,
+        "nem":false
+    },
+    {
+        "nev":"Péter",
+        "kor":12,
+        "nem":false
+    }
+]
+}
