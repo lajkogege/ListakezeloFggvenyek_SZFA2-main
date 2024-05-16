@@ -2,10 +2,10 @@
 import { sorTorles, szuresNevSzerint, tablazatRendez } from "./adatKezelo.js";
 import { megjelenites, tablazatOsszeallit } from "./fuggvenyek.js";
 import { adatokListaba } from "./urlapKezelo.js";
-import {  getAdat} from "./aszikron.js";
+import {  getAdat,deleteAdat} from "./aszikron.js";
 
 
-getAdat("adat.json", init)
+getAdat("http://localhost:3000/emberekLISTA", init)
 /*  jelenítsük meg az adatainkat egy táblázatban az adatok div-ben
 az urlap div-ben legyen egy űrlap, amivel ilyen adatokat tudunk a táblázatba beletenni
 
@@ -30,13 +30,15 @@ let nevIrany = 1;
 //init(emberekLISTA);
 nevSzuresEsemeny();
 
-adatokListaba(emberekLISTA)
+
 
 export function init(lista) {
+  console.log(lista)
   let txt = tablazatOsszeallit(lista);
   megjelenites(txt);
   nevRendezEsemeny(lista);
-  sorTorlesEsemeny()
+  sorTorlesEsemeny();
+  adatokListaba(lista);
 }
 
 function nevRendezEsemeny(lista) {
@@ -68,9 +70,10 @@ function sorTorlesEsemeny() {
   const kukaELEM = $(".kuka");
   kukaELEM.on("click", function (event) {
     let index = event.target.id; /*  az aktuális kuka indexe */
-    const LISTA = sorTorles(emberekLISTA,index);
-    console.log(LISTA)
-    init(LISTA);
+    //const LISTA = sorTorles(emberekLISTA,index);
+    //console.log(LISTA)
+    //init(LISTA);
+    deleteAdat("http://localhost:3000/emberekLISTA", id);
   });
 }
 /*  szorgalmi: Mi a hiba a programban?  */

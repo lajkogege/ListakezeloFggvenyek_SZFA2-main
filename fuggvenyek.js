@@ -2,7 +2,7 @@ export function tablazatOsszeallit(lista) {
   /* összeállítja a html kódot szöveges formátumban, minden sor végén legyen egy kuka! */
   let txt = "";
   txt += "<table class='table table-striped'>";
-  txt += "<tr><th>Név</th><th>Kor</th><th>Nem</th><th></th></tr>";
+  txt += "<tr><th>ID</th><th>Név</th><th>Kor</th><th>Nem</th><th></th></tr>";
   /*  szorgalmi: a fejléc kulcsait is ciklussal írd ki! */
   lista.forEach((element,i) => {
     txt += `<tr>`;
@@ -12,7 +12,7 @@ export function tablazatOsszeallit(lista) {
       txt += `<td>${element[key]}</td>`;
     }
 
-    txt += ` <td id="${i}" class="kuka">🗑️</td>
+    txt += ` <td id="${element.id}" class="kuka">🗑️</td>
             </tr>`;
   });
   txt += "</table>";
